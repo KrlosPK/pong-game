@@ -1,6 +1,11 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 const playButton = document.querySelector('.play-button');
+const infoButton = document.querySelector('.instructions');
+const main = document.querySelector('main');
+const closeButton = document.querySelector('.close');
+const player1Score = document.querySelector('#player1Score');
+const player2Score = document.querySelector('#player2Score');
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -159,4 +164,12 @@ addEventListener('keydown', (e) => {
 playButton.addEventListener('click', () => {
 	animate();
 	playButton.classList.add('hide');
+});
+
+infoButton.addEventListener('click', () => {
+	main.classList.toggle('visible');
+});
+
+closeButton.addEventListener('click', () => {
+	main.classList.remove('visible');
 });

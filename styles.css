@@ -10,11 +10,37 @@ body {
 	background: #000;
 	box-sizing: border-box;
 	display: flex;
+	flex-direction: column;
+	font-family: system-ui;
 	justify-content: center;
 	margin: 0 1em;
 	min-height: 100vh;
 	padding: 0;
 }
+
+.score {
+	color: white;
+	font-family: 'Merchant Copy Doublesize', sans-serif;
+	width: min(100%, 1000px);
+	position: absolute;
+	left: 50%;
+	translate: -50%;
+	top: .5rem;
+}
+.score h2 {
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+.score span {
+	font-size: 2.5rem;
+}
+.score .flex {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1rem;
+}
+
 canvas {
 	border: 1px solid white;
 	width: min(100%, 1000px);
@@ -46,14 +72,75 @@ canvas {
 }
 
 .instructions {
+	background-color: transparent;
+	border: none;
 	color: var(--info-button);
 	cursor: pointer;
-	font-size: 40px;
+	font-size: 3rem;
 	position: absolute;
 	right: 20px;
 	top: 20px;
-	transition: color 300ms ease-in-out;
+	transition: color 300ms ease-in-out, scale 300ms ease-in-out;
 }
 .instructions:hover {
 	color: var(--info-button-hover);
+}
+.instructions:active {
+	scale: 0.9;
+}
+
+main {
+	background-color: whitesmoke;
+	border-bottom: 7px solid var(--info-button);
+	border-left: 10px solid var(--info-button);
+	border-radius: 15px;
+	left: 50%;
+	min-height: 400px;
+	opacity: 0;
+	padding: 2rem;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: opacity 150ms ease-in-out;
+	user-select: none;
+	width: min(100%, 600px);
+}
+main h1 {
+	font-size: 3rem;
+	text-align: center;
+}
+main span {
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+main p {
+	font-size: 2rem;
+}
+main .teclado {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+}
+main.visible {
+	opacity: 1;
+	pointer-events: all;
+}
+
+main .close {
+	background-color: transparent;
+	border: none;
+	color: red;
+	cursor: pointer;
+	font-size: 5.5rem;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	transition: rotate 300ms ease-in-out, color 300ms ease-in-out;
+}
+main .close:hover {
+	rotate: 90deg;
+}
+main .close:active {
+	scale: 0.7;
 }

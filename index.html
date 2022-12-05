@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pong Game 🕹 | KrlosPK</title>
 		<link rel="stylesheet" href="styles.css" />
-        <link rel="shortcut icon" href="imgs/favicon.jpg" type="image/x-icon">
+		<link rel="shortcut icon" href="imgs/favicon.jpg" type="image/x-icon" />
 		<script src="script.js" defer></script>
 		<link
 			rel="stylesheet"
@@ -15,14 +15,45 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link
+			href="http://fonts.cdnfonts.com/css/merchant-copy-doublesize"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<canvas></canvas>
-		<button class="play-button">
-			<img src="./imgs/play-button.png" alt="play button" />
-		</button>
-		<aside class="instructions">
+		<div class="score">
+			<h2>PUNTUACION</h2>
+			<div class="flex">
+				<span id="player1Score">0</span>
+				<span id="player2Score">0</span>
+			</div>
+		</div>
+		<canvas>
+        </canvas>
+        <button class="play-button">
+            <img src="./imgs/play-button.png" alt="play button" />
+        </button>
+		<button class="instructions">
 			<i class="fa-solid fa-circle-info"></i>
-		</aside>
+		</button>
+		<main>
+			<h1>INSTRUCCIONES</h1>
+			<p>
+				El objetivo consiste en <strong>EVITAR</strong> que la pelota
+				pase de tu lado de la pantalla y anotar los máximos puntos
+				posibles
+			</p>
+			<span>Jugador 1:</span>
+			<p class="teclado">
+				Utiliza: <img src="imgs/wasd.png" width="60" alt="" /> para
+				moverte por la pantalla
+			</p>
+			<span>Jugador 2:</span>
+			<p class="teclado">
+				Utiliza: <img src="imgs/flechas.png" width="60" alt="" /> para
+				moverte por la pantalla
+			</p>
+			<button class="close">×</button>
+		</main>
 	</body>
 </html>
